@@ -1,0 +1,10 @@
+.filter-option > .ant-checkbox-wrapper {
+  font-size: #{f-pxRem(17)};
+}
+.ant-checkbox + span {
+  padding: 0 #{f-pxRem(14)} !important;
+}
+.input[type="checkbox"] {
+  background-color: #002b4e !important;
+  color: white;
+}

@@ -1,0 +1,143 @@
+.header {
+  border-bottom: 1px solid map-get($colors, border-gray);
+  &.header-up {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 998;
+    animation: scrollHeader 0.3s ease-in-out;
+    background-color: map-get($colors, white);
+    border-bottom: 1px solid #f2f2f2;
+    & > .container {
+      height: #{f-pxRem(70)};
+    }
+    @keyframes scrollHeader {
+      from {
+        top: -50px;
+      }
+      to {
+        top: 0;
+      }
+    }
+  }
+  & > .container {
+    height: #{f-pxRem(90)};
+  }
+  &-item {
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+  //Menu icon
+  .menu-icon {
+    display: none;
+    & > button {
+      border: none;
+      background-color: #fff;
+      line-height: unset;
+      height: 16px;
+    }
+  }
+  //Logo
+  &-logo {
+    padding-right: #{f-pxRem(47)};
+  }
+  //Nav
+  .nav-menu {
+    position: relative;
+    height: 100%;
+    //hover dropdown-toggle
+    & > .menu-item:hover {
+      .dropdown-toggle > .dropdown-title {
+        color: map-get($colors, txt-hover);
+      }
+      .dropdown-toggle + .dropdown-sub {
+        visibility: visible;
+      }
+      .dropdown-toggle::after {
+        width: 100%;
+      }
+    }
+  }
+  .menu-item {
+    height: 100%;
+    position: relative;
+    &:first-child {
+      padding-left: 0;
+    }
+    &:last-child {
+      padding-right: 0;
+    }
+  }
+  //Left
+  &-left {
+    height: 100%;
+    & > li {
+      display: flex;
+      align-items: center;
+      height: 100%;
+      padding: 0 10px;
+    }
+    & > li:last-child {
+      padding-right: 9px;
+    }
+    & > li:nth-child(2) {
+      padding-bottom: 3px;
+    }
+  }
+}
+
+//respond 960
+@include respond-below(wide) {
+  .header {
+    &.header-up {
+      & > .container {
+        height: #{f-pxRem(60)};
+      }
+    }
+    & > .container {
+      height: #{f-pxRem(60)};
+    }
+    .main-navigation.header-item.header-center {
+      display: none;
+    }
+    .header-item {
+      flex: 1;
+    }
+    .header-logo {
+      display: flex;
+      justify-content: center;
+      padding: 0;
+    }
+    .header-left {
+      display: flex;
+      justify-content: flex-end;
+      li {
+        padding: 0;
+      }
+      & > li:nth-child(3) {
+        order: 1;
+      }
+      & > li:nth-child(2) {
+        order: 4;
+      }
+      & > li:first-child {
+        order: 2;
+        margin-left: 15px;
+      }
+      & > li:last-child {
+        order: 3;
+        margin-left: 15px;
+        padding-right: 5px;
+      }
+    }
+    .header-left > li:nth-child(2) {
+      display: none;
+    }
+
+    .menu-icon {
+      display: flex;
+      padding-top: 1px;
+    }
+  }
+}

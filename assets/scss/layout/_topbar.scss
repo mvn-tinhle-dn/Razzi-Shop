@@ -1,0 +1,87 @@
+.topbar {
+  height: #{f-pxRem(50)};
+  background-color: #f5f5f5;
+  & > .container {
+    height: 100%;
+  }
+  &-item {
+    height: 100%;
+  }
+  //TopBar Left
+  &-text {
+    font-size: #{f-pxRem(11)};
+    letter-spacing: 0.02em;
+    font-weight: 500;
+    margin-right: #{f-pxRem(50)};
+    & > svg {
+      margin-right: #{f-pxRem(14)};
+    }
+  }
+  &-currency {
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      height: 10px;
+      width: 1px;
+      background-color: map-get($colors, txt-gray);
+    }
+  }
+  //TopBar Right
+  &-menu {
+    padding-right: 1px;
+    height: 100%;
+    & > .menu-item {
+      display: flex;
+      align-items: center;
+      height: 100%;
+      & > a {
+        color: black;
+        transition: all 0.3s linear;
+        letter-spacing: 0.001em;
+        padding: 0 2px;
+      }
+      &:hover {
+        a {
+          color: map-get($colors, txt-hover);
+        }
+      }
+    }
+    & > .menu-item:first-child {
+      padding-left: 0;
+    }
+    & > .menu-item:last-child {
+      padding-right: 0;
+    }
+  }
+  &-socials-menu {
+    margin-left: #{f-pxRem(61)};
+  }
+  .socials-menu-item {
+    & > a {
+      display: inline-block;
+      padding: 0 #{f-pxRem(10)};
+      color: #a0a0a0;
+      transition: color 0.2s linear;
+    }
+    & > a:hover {
+      color: map-get($colors, black);
+    }
+    &:last-child > a {
+      padding-right: 0;
+    }
+  }
+}
+.main-navigation {
+  & li {
+    padding: 8px 14px;
+  }
+}
+@include respond-below(wide) {
+  .topbar {
+    display: none;
+  }
+}

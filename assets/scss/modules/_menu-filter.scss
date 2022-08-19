@@ -1,0 +1,50 @@
+.filter-sub > .ant-menu.ant-menu-root.ant-menu-inline.ant-menu-light {
+  border-right: unset;
+  & > .ant-menu-submenu > .ant-menu-submenu-title {
+    padding-left: 0 !important;
+
+    & .ant-checkbox-wrapper {
+      font-family: "Jost";
+      font-size: #{f-pxRem(17)};
+      font-weight: 400;
+      color: #525252;
+    }
+  }
+  [aria-expanded="true"] {
+    & .ant-checkbox-wrapper {
+      color: #000 !important;
+    }
+  }
+  .ant-checkbox.ant-checkbox-checked + span {
+    color: #000;
+  }
+  .ant-menu-sub.ant-menu-inline {
+    background-color: #fff;
+    & > .ant-menu-item.ant-menu-item-only-child {
+      padding-left: #{f-pxRem(16)} !important;
+      & .ant-menu-title-content > .ant-checkbox-wrapper {
+        font-family: "Jost";
+        font-size: #{f-pxRem(17)};
+        font-weight: 400;
+        color: #525252;
+      }
+    }
+  }
+  .ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
+    background-color: unset;
+  }
+  .ant-menu-item-selected {
+    color: unset;
+  }
+  .ant-menu-inline .ant-menu-item-selected::after {
+    opacity: 0;
+  }
+}
+.ant-checkbox-checked .ant-checkbox-inner {
+  background-color: black !important;
+  border-color: black !important;
+}
+.ant-menu-submenu-arrow::before,
+.ant-menu-submenu-arrow::after {
+  background-color: black;
+}

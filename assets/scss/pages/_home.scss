@@ -1,0 +1,58 @@
+.home {
+  margin-bottom: 110px;
+}
+.home.home-up {
+  margin-top: #{f-pxRem(90)};
+}
+//Section-Page-header
+.page-title {
+  font-size: #{f-pxRem(32)};
+  padding-top: #{f-pxRem(40)};
+  padding-bottom: #{f-pxRem(17)};
+  text-align: center;
+  line-height: 1.33;
+  font-weight: 500;
+  letter-spacing: 0.002em;
+}
+//Section page slider
+.page-slider {
+  margin: #{f-pxRem(60) 0 #{f-pxRem(80)}};
+}
+//Section page filter
+.page-filter {
+  margin-bottom: #{f-pxRem(50)};
+}
+//Section page product
+.page-product {
+  margin-bottom: 25px;
+  & > .container {
+    padding: 0;
+  }
+  & > .container > .row {
+    margin-left: -15px;
+    margin-right: -15px;
+    > [class*="col-"] {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+  }
+}
+//Section page title sub
+.page-title-sub {
+  text-align: center;
+  .title-sub-text {
+    font-size: 15px;
+    letter-spacing: 0.0025em;
+    color: map-get($colors, txt-gray-light);
+    font-weight: 400;
+    padding: 9px 50px;
+    display: inline-block;
+    border-bottom: 2px solid map-get($colors, black);
+    line-height: 1.5;
+  }
+}
+@include respond-below(wide) {
+  .page-filter {
+    flex-wrap: wrap;
+  }
+}

@@ -1,0 +1,98 @@
+.check-round {
+  display: block;
+  position: relative;
+  padding-left: #{f-pxRem(35)};
+  margin-bottom: #{f-pxRem(12)};
+  cursor: pointer;
+  font-size: #{f-pxRem(17)};
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.check-round input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: #{f-pxRem(22)};
+  width: #{f-pxRem(22)};
+  background-color: map-get($colors, black);
+  &.yellow {
+    background-color: #eeee22;
+  }
+  &.red {
+    background-color: #dd3333;
+  }
+  &.green {
+    background-color: #81d742;
+  }
+  &.gray {
+    background-color: #a0a0a0;
+  }
+  &.brown {
+    background-color: #722f09;
+  }
+  &.blue {
+    background-color: #1e73be;
+  }
+  border-radius: #{f-pxRem(15)};
+}
+
+/* When the checkbox is checked, add a blue background */
+.check-round input:checked ~ .checkmark {
+  background-color: map-get($colors, black);
+  &.yellow {
+    background-color: #eeee22;
+  }
+  &.red {
+    background-color: #dd3333;
+  }
+  &.green {
+    background-color: #81d742;
+  }
+  &.gray {
+    background-color: #a0a0a0;
+  }
+  &.brown {
+    background-color: #722f09;
+  }
+  &.blue {
+    background-color: #1e73be;
+  }
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.check-round input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.check-round .checkmark:after {
+  left: #{f-pxRem(8)};
+  top: #{f-pxRem(4)};
+  width: #{f-pxRem(8)};
+  height: #{f-pxRem(13)};
+  border: solid white;
+  border-width: 0 #{f-pxRem(3)} #{f-pxRem(3)} 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}

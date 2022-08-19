@@ -1,0 +1,19 @@
+.btn {
+  @include pxRem(padding, 8 16);
+  @include pxRem(font-size, 16);
+  @include pxRem(height, 40);
+  font-weight: 500;
+  background-color: map-get($colors, white);
+  font-family: $font-body;
+  color: map-get($colors, black);
+  line-height: 1;
+  cursor: pointer;
+  transition: background 400ms ease;
+  border: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  &:focus {
+    outline: none;
+  }
+}

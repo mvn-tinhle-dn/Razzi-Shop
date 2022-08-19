@@ -1,0 +1,23 @@
+//custom icon close
+.ant-drawer-header > .ant-drawer-header-title {
+  position: relative;
+  text-align: center;
+  .ant-drawer-close {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+.ant-drawer-body {
+  & > .ant-menu {
+    .ant-menu-submenu > .ant-menu-submenu-title {
+      font-size: 20px;
+    }
+    .ant-menu-submenu-open.ant-menu-submenu > .ant-menu-submenu-title {
+      .ant-menu-submenu-arrow {
+        color: #ff6f61;
+      }
+    }
+  }
+}

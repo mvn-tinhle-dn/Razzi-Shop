@@ -1,0 +1,29 @@
+.ant-input-wrapper.ant-input-group {
+  position: relative;
+  & > .ant-input {
+    border-radius: unset;
+  }
+  & > .ant-input-group-addon {
+    & > button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: #{f-pxRem(5)};
+      background-color: transparent;
+      color: map-get($colors, black);
+      border: unset;
+      outline: none;
+    }
+  }
+}
+.filter-sub-list.brand-list {
+  margin-top: #{f-pxRem(20)};
+  height: #{f-pxRem(260)};
+  overflow-y: scroll;
+  &::-webkit-scrollbar {
+    width: #{f-pxRem(1)};
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: map-get($colors, black);
+  }
+}

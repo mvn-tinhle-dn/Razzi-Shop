@@ -1,0 +1,193 @@
+.product-list {
+}
+.product-item {
+  padding-bottom: #{f-pxRem(20)};
+  .product-info {
+    margin: #{f-pxRem(20)} #{f-pxRem(15)} 0;
+  }
+  .product-name > a {
+    font-size: #{f-pxRem(16)};
+    font-weight: 500;
+    line-height: 1.33;
+    letter-spacing: 0.00025rem;
+  }
+  .product-img {
+    position: relative;
+    height: #{f-pxRem(324)};
+
+    & > img {
+      cursor: pointer;
+      height: 100%;
+      width: 100%;
+    }
+  }
+  &:hover {
+    .product-read-more {
+      visibility: visible;
+      opacity: 1;
+    }
+    .product-actions-heart {
+      animation: hoverAction 0.2s linear forwards;
+    }
+    .product-actions-view {
+      animation: hoverAction 0.2s linear 0.1s forwards;
+    }
+  }
+  .product-actions {
+    position: absolute;
+    top: 0;
+    right: #{f-pxRem(20)};
+    height: 100%;
+    padding: #{f-pxRem(20)} 0;
+    display: flex;
+    flex-direction: column;
+  }
+  .product-actions-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: #{f-pxRem(10)};
+    width: #{f-pxRem(40)};
+    height: #{f-pxRem(40)};
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: map-get($colors, white);
+    opacity: 0;
+    &:hover {
+      background-color: #ff6f61;
+      svg {
+        color: map-get($colors, white);
+      }
+      .actions-tooltip {
+        visibility: visible;
+      }
+    }
+  }
+  .product-actions-heart {
+    animation: unHoverAction 0.2s linear;
+  }
+  .product-actions-view {
+    animation: unHoverAction 0.2s linear 0.1s;
+  }
+
+  .actions-tooltip {
+    visibility: hidden;
+    position: absolute;
+    display: inline-block;
+    overflow-wrap: unset;
+    padding: #{f-pxRem(6)} #{f-pxRem(12)} #{f-pxRem(7)};
+    font-size: #{f-pxRem(13)};
+    white-space: nowrap;
+    font-weight: 400;
+    border-radius: #{f-pxRem(5)};
+    right: calc(100% + #{f-pxRem(12)});
+    top: 50%;
+    transform: translateY(-50%);
+    line-height: 1;
+    color: map-get($colors, white);
+    background-color: map-get($colors, black);
+    &::after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 0;
+      border-top: #{f-pxRem(6)} solid transparent;
+      border-bottom: #{f-pxRem(6)} solid transparent;
+      border-left: #{f-pxRem(6)} solid #000;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 100%;
+    }
+  }
+
+  .product-read-more {
+    visibility: hidden;
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: #{f-pxRem(15)};
+    width: 100%;
+    left: 0;
+    height: #{f-pxRem(40)};
+    background-color: map-get($colors, black);
+    color: map-get($colors, white);
+    cursor: pointer;
+    & > span {
+      display: inline-block;
+      margin-left: #{f-pxRem(8)};
+    }
+    transition: all 0.2s ease-in-out;
+    opacity: 0;
+  }
+  .product-sou-out,
+  .product-sale {
+    color: map-get($colors, white);
+    top: #{f-pxRem(20)};
+    left: 0;
+    position: absolute;
+    display: block;
+    padding: #{f-pxRem(5)} #{f-pxRem(11)};
+    line-height: 1;
+    font-size: #{f-pxRem(11)};
+    font-weight: 500;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 0.0025em;
+  }
+  .product-sou-out {
+    background-color: #a0a0a0;
+  }
+  .product-sou-out.hot {
+    background-color: #ff6f61;
+  }
+  .product-sale {
+    background-color: map-get($colors, black);
+  }
+  .product-name {
+    font-size: #{f-pxRem(16)};
+    text-align: center;
+    margin-bottom: #{f-pxRem(3)};
+  }
+  .product-price {
+    text-align: center;
+    color: map-get($colors, txt-gray-light);
+    font-size: #{f-pxRem(16)};
+    font-weight: 500;
+    letter-spacing: 0.00025rem;
+    .price-default {
+      text-decoration-line: line-through;
+      font-size: #{f-pxRem(14)};
+      margin-right: #{f-pxRem(10)};
+    }
+    .price-sale {
+      color: #ff6f61;
+    }
+  }
+}
+@keyframes hoverAction {
+  from {
+    opacity: 0;
+    right: -#{f-pxRem(10)};
+    visibility: hidden;
+  }
+  to {
+    opacity: 1;
+    right: 0;
+    visibility: visible;
+  }
+}
+@keyframes unHoverAction {
+  from {
+    opacity: 1;
+    right: 0;
+    visibility: visible;
+  }
+  to {
+    opacity: 0;
+    right: -#{f-pxRem(10)};
+    visibility: hidden;
+  }
+}

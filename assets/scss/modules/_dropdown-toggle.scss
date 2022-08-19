@@ -1,0 +1,97 @@
+.dropdown-toggle {
+  position: relative;
+  display: inline-block;
+  padding: 0 #{f-pxRem(3)};
+  & > .dropdown-title {
+    font-size: #{f-pxRem(16)};
+    letter-spacing: 0.001em;
+    color: map-get($colors, black);
+    transition: color 0.3s linear;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 0;
+    height: #{f-pxRem(1)};
+    transition: width 0.3s linear;
+    background-color: map-get($colors, txt-hover);
+  }
+}
+.dropdown-sub {
+  position: absolute;
+  visibility: hidden;
+  padding: #{f-pxRem(32)} #{f-pxRem(15)};
+  left: 0;
+  top: 98%;
+  min-width: #{f-pxRem(200)};
+  background-color: map-get($colors, white);
+  min-height: #{f-pxRem(100)};
+  box-shadow: 0 0 30px 0 rgb(0 0 0 / 10%);
+  z-index: 999;
+
+  &.center {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .menu-item-mega {
+    flex: 1;
+    padding: 0 #{f-pxRem(15)};
+    .sub-mega {
+      .mega-title {
+        font-size: #{f-pxRem(16)};
+        font-weight: 500;
+        display: block;
+        padding-bottom: #{f-pxRem(20)};
+        color: map-get($colors, black);
+        transition: color 0.2s linear;
+      }
+      .mega-title:hover {
+        color: map-get($colors, txt-hover);
+      }
+      padding: #{f-pxRem(19)} 0;
+      .mega-item {
+        margin-bottom: #{f-pxRem(9)};
+        font-size: #{f-pxRem(15)};
+        line-height: 1.5;
+        font-weight: 400;
+        letter-spacing: 0.0005em;
+        cursor: pointer;
+      }
+      .mega-item > a {
+        color: map-get($colors, black);
+        transition: color 0.2s linear;
+      }
+      .mega-item > a:hover {
+        color: map-get($colors, txt-hover);
+      }
+    }
+  }
+
+  & > .sub-mega {
+    .mega-item {
+      & > a {
+        font-weight: 400;
+        font-size: #{f-pxRem(15)};
+        line-height: 1.5;
+        color: map-get($colors, black);
+      }
+      & > a:hover {
+        color: map-get($colors, txt-hover);
+      }
+    }
+  }
+}
+.main-navigation {
+  .dropdown-sub-menu {
+    .dropdown-sub-item {
+      padding: 0;
+      & li {
+        padding: 0;
+      }
+    }
+  }
+}

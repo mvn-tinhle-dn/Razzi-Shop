@@ -1,0 +1,46 @@
+.dropdown {
+  position: relative;
+  height: 100%;
+  padding: 0 #{f-pxRem(20)};
+  cursor: pointer;
+  &:hover {
+    .content-droplist {
+      visibility: visible;
+      top: 100%;
+      opacity: 1;
+    }
+  }
+}
+.current {
+  & > .selected {
+    letter-spacing: 0.005em;
+  }
+  & > svg {
+    margin-left: #{f-pxRem(9)};
+    font-size: #{f-pxRem(14)};
+  }
+}
+.content-droplist {
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+  left: 0;
+  width: 100%;
+  top: 110%;
+  transition: all 0.3s ease-in-out;
+  background-color: white;
+  box-shadow: 0 #{f-pxRem(2)} #{f-pxRem(6)} rgb(0 0 0 / 5%);
+  z-index: 1000;
+  & > ul {
+    & > li {
+      & + li {
+        border-top: #{f-pxRem(1)} solid map-get($colors, border-gray);
+      }
+    }
+    & > li > a {
+      display: block;
+      padding: #{f-pxRem(13)} #{f-pxRem(20)};
+      width: 100%;
+    }
+  }
+}

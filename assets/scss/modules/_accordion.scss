@@ -1,0 +1,148 @@
+.product-filter {
+  position: relative;
+  width: 14.28571%;
+  border: #{f-pxRem(1)} solid map-get($colors, border-gray);
+  & + .product-filter {
+    border-left: unset;
+  }
+
+  //title
+  .filter-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: #{f-pxRem(15)} #{f-pxRem(20)};
+    font-size: #{f-pxRem(16)};
+    letter-spacing: 0;
+    line-height: 1;
+    cursor: pointer;
+    &::after {
+      content: "";
+      display: inline-block;
+      width: #{f-pxRem(11)};
+      height: #{f-pxRem(6)};
+      background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTEiIGhlaWdodD0iNiIgdmlld0JveD0iMCAwIDExIDYiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+DQo8cGF0aCBkPSJNNC45NTU0NCA1Ljc4NDEzTDAuMjI1NzY1IDEuMjU4MjdDLTAuMDc1MjU1NCAwLjk3MDM3NSAtMC4wNzUyNTU0IDAuNTAzNTk2IDAuMjI1NzY1IDAuMjE1ODM3QzAuNTI2NTE3IC0wLjA3MTk0NTYgMS4wMTQzMSAtMC4wNzE5NDU2IDEuMzE1MDQgMC4yMTU4MzdMNS41MDAwOCA0LjIyMDUyTDkuNjg0OTggMC4yMTU5NTNDOS45ODU4NSAtMC4wNzE4MjkyIDEwLjQ3MzYgLTAuMDcxODI5MiAxMC43NzQzIDAuMjE1OTUzQzExLjA3NTIgMC41MDM3MzYgMTEuMDc1MiAwLjk3MDQ5MSAxMC43NzQzIDEuMjU4MzlMNi4wNDQ1OSA1Ljc4NDI0QzUuODk0MTQgNS45MjgxNCA1LjY5NzE3IDYgNS41MDAxIDZDNS4zMDI5NCA2IDUuMTA1ODIgNS45MjggNC45NTU0NCA1Ljc4NDEzWiIgZmlsbD0iIzFGMUYxRiIvPg0KPC9zdmc+DQo=);
+      background-size: 100%;
+      transition: transform 0.4s ease-in-out;
+    }
+  }
+
+  .filter-title.active {
+    &::after {
+      transform: rotate(180deg);
+    }
+  }
+  //sub
+  .filter-sub {
+    visibility: hidden;
+    position: absolute;
+    padding: #{f-pxRem(20)};
+    width: #{f-pxRem(280)};
+    height: auto;
+    left: -1px;
+    top: calc(100%);
+    z-index: 1;
+    background-color: map-get($colors, white);
+    border: 1px solid map-get($colors, border-gray);
+    transition: all 0.3s ease-in-out;
+    opacity: 0;
+    &.right {
+      left: unset;
+      right: -1px;
+    }
+    &-item {
+      padding: #{f-pxRem(6)} 0;
+      font-size: #{f-pxRem(17)};
+      color: map-get($colors, txt-gray-dark);
+      font-weight: 400;
+      line-height: 1.4;
+      letter-spacing: unset;
+      &:hover {
+        cursor: pointer;
+        & > span {
+          color: #000;
+        }
+      }
+    }
+    &-item:first-child {
+      padding-top: 0;
+    }
+
+    //(fix)
+    &.active {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+  .filter-control {
+    position: relative;
+    padding-top: #{f-pxRem(20)};
+    margin-top: #{f-pxRem(20)};
+    &::before {
+      content: "";
+      position: absolute;
+      left: -20px;
+      top: 0;
+      height: 1px;
+      width: calc(100% + 40px);
+      background-color: map-get($colors, border-gray);
+    }
+    .btn-filter {
+      padding: 0 #{f-pxRem(24)};
+    }
+    .btn-clear {
+      border: #{f-pxRem(1)} solid map-get($colors, border-gray);
+      margin-right: #{f-pxRem(10)};
+    }
+    .btn-submit {
+      color: map-get($colors, white);
+      background-color: map-get($colors, black);
+    }
+  }
+}
+//Respond 960
+@include respond-below(wide) {
+  .product-filter {
+    width: 100%;
+    border: 1px solid map-get($colors, border-gray);
+    & + .product-filter {
+      border-left: 1px solid map-get($colors, border-gray);
+      border-top: unset;
+    }
+  }
+  .product-filter > .filter-sub {
+    position: unset;
+    width: 100%;
+    visibility: visible;
+    overflow: hidden;
+    opacity: 1;
+    padding: 0;
+    height: 0;
+    border: unset;
+    &.active {
+      animation: showSub 0.3s linear forwards;
+    }
+    & > .filter-sub-list {
+      padding: 20px;
+    }
+    & > .ant-menu {
+      padding: 20px;
+      width: 100%;
+    }
+    &.active .filter-control {
+      padding-bottom: 20px;
+      border-bottom: 1px solid map-get($colors, border-gray);
+    }
+  }
+}
+@keyframes showSub {
+  from {
+    height: 0px;
+    border-top: 1px solid transparent;
+  }
+  to {
+    height: 100%;
+    border-top: 1px solid map-get($colors, border-gray);
+  }
+}

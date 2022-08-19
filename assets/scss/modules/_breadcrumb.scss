@@ -1,0 +1,42 @@
+.breadcrumb {
+  display: inline-block;
+  margin: 0;
+  padding: #{f-pxRem(18)} 0 #{f-pxRem(19)};
+  width: 100%;
+
+  &-item {
+    display: flex;
+    align-items: center;
+    & > span {
+      display: flex;
+      align-items: center;
+      height: #{f-pxRem(21)};
+
+      color: #909090;
+      margin: 0 #{f-pxRem(5)};
+    }
+    & > a {
+      font-weight: 400;
+      letter-spacing: 0.003em;
+      color: #909090;
+      font-size: $font-size-base;
+      transition: color 0.3s linear;
+    }
+  }
+  &-item:last-child {
+    &:hover {
+      & > a {
+        cursor: text;
+        color: #909090;
+      }
+    }
+    & > span {
+      display: none;
+    }
+  }
+  &-item:hover {
+    & > a {
+      color: map-get($colors, black);
+    }
+  }
+}
