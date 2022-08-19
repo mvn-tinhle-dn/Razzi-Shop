@@ -13,7 +13,7 @@
     content: "";
     position: absolute;
     bottom: -1px;
-    left: 0;
+    @include pxRem(left, 0);
     width: 0;
     height: #{f-pxRem(1)};
     transition: width 0.3s linear;
@@ -24,7 +24,7 @@
   position: absolute;
   visibility: hidden;
   padding: #{f-pxRem(32)} #{f-pxRem(15)};
-  left: 0;
+  @include pxRem(left, 0);
   top: 98%;
   min-width: #{f-pxRem(200)};
   background-color: map-get($colors, white);
@@ -88,9 +88,9 @@
 .main-navigation {
   .dropdown-sub-menu {
     .dropdown-sub-item {
-      padding: 0;
+      @include pxRem(padding, 0);
       & li {
-        padding: 0;
+        @include pxRem(padding, 0);
       }
     }
   }

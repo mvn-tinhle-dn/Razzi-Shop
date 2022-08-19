@@ -2,7 +2,7 @@
   border-bottom: 1px solid map-get($colors, border-gray);
   &.header-up {
     position: fixed;
-    top: 0;
+    @include pxRem(top, 0);
     width: 100%;
     z-index: 998;
     animation: scrollHeader 0.3s ease-in-out;
@@ -13,10 +13,10 @@
     }
     @keyframes scrollHeader {
       from {
-        top: -50px;
+        @include pxRem(top, -50);
       }
       to {
-        top: 0;
+        @include pxRem(top, 0);
       }
     }
   }
@@ -63,10 +63,10 @@
     height: 100%;
     position: relative;
     &:first-child {
-      padding-left: 0;
+      @include pxRem(padding-left, 0);
     }
     &:last-child {
-      padding-right: 0;
+      @include pxRem(padding-right, 0);
     }
   }
   //Left
@@ -76,13 +76,13 @@
       display: flex;
       align-items: center;
       height: 100%;
-      padding: 0 10px;
+      @include pxRem(padding, 0 10);
     }
     & > li:last-child {
-      padding-right: 9px;
+      @include pxRem(padding-right, 9);
     }
     & > li:nth-child(2) {
-      padding-bottom: 3px;
+      @include pxRem(padding-bottom, 3);
     }
   }
 }
@@ -107,13 +107,13 @@
     .header-logo {
       display: flex;
       justify-content: center;
-      padding: 0;
+      @include pxRem(padding, 0);
     }
     .header-left {
       display: flex;
       justify-content: flex-end;
       li {
-        padding: 0;
+        @include pxRem(padding, 0);
       }
       & > li:nth-child(3) {
         order: 1;
@@ -123,12 +123,12 @@
       }
       & > li:first-child {
         order: 2;
-        margin-left: 15px;
+        @include pxRem(margin-left, 15);
       }
       & > li:last-child {
         order: 3;
-        margin-left: 15px;
-        padding-right: 5px;
+        @include pxRem(margin-left, 15);
+        @include pxRem(padding-right, 5);
       }
     }
     .header-left > li:nth-child(2) {
@@ -137,7 +137,7 @@
 
     .menu-icon {
       display: flex;
-      padding-top: 1px;
+      @include pxRem(padding-top, 1);
     }
   }
 }

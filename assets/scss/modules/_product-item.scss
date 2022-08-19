@@ -35,7 +35,7 @@
   }
   .product-actions {
     position: absolute;
-    top: 0;
+    @include pxRem(top, 0);
     right: #{f-pxRem(20)};
     height: 100%;
     padding: #{f-pxRem(20)} 0;
@@ -55,7 +55,7 @@
     background-color: map-get($colors, white);
     opacity: 0;
     &:hover {
-      background-color: #ff6f61;
+      background-color: map-get($colors, txt-hover);
       svg {
         color: map-get($colors, white);
       }
@@ -110,7 +110,7 @@
     justify-content: center;
     font-size: #{f-pxRem(15)};
     width: 100%;
-    left: 0;
+    @include pxRem(left, 0);
     height: #{f-pxRem(40)};
     background-color: map-get($colors, black);
     color: map-get($colors, white);
@@ -126,7 +126,7 @@
   .product-sale {
     color: map-get($colors, white);
     top: #{f-pxRem(20)};
-    left: 0;
+    @include pxRem(left, 0);
     position: absolute;
     display: block;
     padding: #{f-pxRem(5)} #{f-pxRem(11)};
@@ -141,7 +141,7 @@
     background-color: #a0a0a0;
   }
   .product-sou-out.hot {
-    background-color: #ff6f61;
+    background-color: map-get($colors, txt-hover);
   }
   .product-sale {
     background-color: map-get($colors, black);
@@ -163,7 +163,7 @@
       margin-right: #{f-pxRem(10)};
     }
     .price-sale {
-      color: #ff6f61;
+      color: map-get($colors, txt-hover);
     }
   }
 }

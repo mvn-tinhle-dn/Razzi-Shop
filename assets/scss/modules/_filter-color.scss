@@ -23,8 +23,8 @@
 /* Create a custom checkbox */
 .checkmark {
   position: absolute;
-  top: 0;
-  left: 0;
+  @include pxRem(top, 0);
+  @include pxRem(left, 0);
   height: #{f-pxRem(22)};
   width: #{f-pxRem(22)};
   background-color: map-get($colors, black);

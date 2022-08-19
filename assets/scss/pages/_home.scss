@@ -1,5 +1,5 @@
 .home {
-  margin-bottom: 110px;
+  @include pxRem(margin-bottom, 110);
 }
 .home.home-up {
   margin-top: #{f-pxRem(90)};
@@ -24,16 +24,16 @@
 }
 //Section page product
 .page-product {
-  margin-bottom: 25px;
+  @include pxRem(margin-bottom, 25);
   & > .container {
     padding: 0;
   }
   & > .container > .row {
-    margin-left: -15px;
-    margin-right: -15px;
+    @include pxRem(margin-left, -15);
+    @include pxRem(margin-right, -15);
     > [class*="col-"] {
-      padding-left: 15px;
-      padding-right: 15px;
+      @include pxRem(padding-left, 15);
+      @include pxRem(padding-right, 15);
     }
   }
 }
@@ -41,11 +41,11 @@
 .page-title-sub {
   text-align: center;
   .title-sub-text {
-    font-size: 15px;
+    @include pxRem(font-size, 15);
     letter-spacing: 0.0025em;
     color: map-get($colors, txt-gray-light);
     font-weight: 400;
-    padding: 9px 50px;
+    @include pxRem(padding, 9 50);
     display: inline-block;
     border-bottom: 2px solid map-get($colors, black);
     line-height: 1.5;

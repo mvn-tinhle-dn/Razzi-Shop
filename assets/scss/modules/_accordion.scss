@@ -40,7 +40,7 @@
     padding: #{f-pxRem(20)};
     width: #{f-pxRem(280)};
     height: auto;
-    left: -1px;
+    @include pxRem(left, -1);
     top: calc(100%);
     z-index: 1;
     background-color: map-get($colors, white);
@@ -49,7 +49,7 @@
     opacity: 0;
     &.right {
       left: unset;
-      right: -1px;
+      @include pxRem(right, -1);
     }
     &-item {
       padding: #{f-pxRem(6)} 0;
@@ -66,7 +66,7 @@
       }
     }
     &-item:first-child {
-      padding-top: 0;
+      @include pxRem(padding-top, 0);
     }
 
     //(fix)
@@ -82,8 +82,9 @@
     &::before {
       content: "";
       position: absolute;
-      left: -20px;
-      top: 0;
+
+      @include pxRem(left, -20);
+      @include pxRem(top, 0);
       height: 1px;
       width: calc(100% + 40px);
       background-color: map-get($colors, border-gray);
@@ -117,21 +118,21 @@
     visibility: visible;
     overflow: hidden;
     opacity: 1;
-    padding: 0;
+    @include pxRem(padding, 0);
     height: 0;
     border: unset;
     &.active {
       animation: showSub 0.3s linear forwards;
     }
     & > .filter-sub-list {
-      padding: 20px;
+      @include pxRem(padding, 20);
     }
     & > .ant-menu {
-      padding: 20px;
+      @include pxRem(padding, 20);
       width: 100%;
     }
     &.active .filter-control {
-      padding-bottom: 20px;
+      @include pxRem(padding-bottom, 20);
       border-bottom: 1px solid map-get($colors, border-gray);
     }
   }

@@ -12,11 +12,11 @@
 .ant-drawer-body {
   & > .ant-menu {
     .ant-menu-submenu > .ant-menu-submenu-title {
-      font-size: 20px;
+      @include pxRem(font-size, 20);
     }
     .ant-menu-submenu-open.ant-menu-submenu > .ant-menu-submenu-title {
       .ant-menu-submenu-arrow {
-        color: #ff6f61;
+        color: map-get($colors, txt-hover);
       }
     }
   }

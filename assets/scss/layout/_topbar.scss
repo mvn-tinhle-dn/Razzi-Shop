@@ -32,17 +32,17 @@
   }
   //TopBar Right
   &-menu {
-    padding-right: 1px;
+    @include pxRem(padding-right, 1);
     height: 100%;
     & > .menu-item {
       display: flex;
       align-items: center;
       height: 100%;
       & > a {
-        color: black;
+        color: map-get($colors, black);
         transition: all 0.3s linear;
         letter-spacing: 0.001em;
-        padding: 0 2px;
+        @include pxRem(padding, 0 2);
       }
       &:hover {
         a {
@@ -51,10 +51,10 @@
       }
     }
     & > .menu-item:first-child {
-      padding-left: 0;
+      @include pxRem(padding-left, 0);
     }
     & > .menu-item:last-child {
-      padding-right: 0;
+      @include pxRem(padding-right, 0);
     }
   }
   &-socials-menu {
@@ -71,13 +71,13 @@
       color: map-get($colors, black);
     }
     &:last-child > a {
-      padding-right: 0;
+      @include pxRem(padding-right, 0);
     }
   }
 }
 .main-navigation {
   & li {
-    padding: 8px 14px;
+    @include pxRem(padding, 8 14);
   }
 }
 @include respond-below(wide) {
