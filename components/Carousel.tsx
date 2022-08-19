@@ -49,7 +49,7 @@ export default function Carousel(props: ICarouselProps) {
             <div key={index}>
               <h3>
                 <img src={item.image} alt="f1310" className="lazyloaded" />
-                <p className="slick-title">{item.title}</p>
+                <span className="slick-title">{item.title}</span>
               </h3>
             </div>
           );

@@ -35,11 +35,11 @@ const Home: NextPage = () => {
       <HeadCustom page="Home"></HeadCustom>
       <div ref={home} className="home">
         <div className="container">
-          <section className="page-header">
+          <div className="page-header">
             <Breadcrumb href="." items={["Home", "Shop"]} />
             <PageTitle title="Shop" />
-          </section>
-          <section className="page-slider">
+          </div>
+          <div className="page-slider">
             <Carousel
               types={[
                 {
@@ -74,8 +74,8 @@ const Home: NextPage = () => {
                 },
               ]}
             />
-          </section>
-          <section className="page-filter flex">
+          </div>
+          <div className="page-filter flex">
             <Accordion title="Order By">
               {" "}
               <OderFilter />
@@ -105,13 +105,13 @@ const Home: NextPage = () => {
               <RatingFilter />
               <FilterControl />
             </Accordion>
-          </section>
-          <section className="page-product">
+          </div>
+          <div className="page-product">
             <ProductList />
-          </section>
-          <section className=" page-title-sub">
+          </div>
+          <div className=" page-title-sub">
             <h4 className="title-sub-text">Showing 16 of 16 products</h4>
-          </section>
+          </div>
         </div>
       </div>
     </>

@@ -10,7 +10,7 @@ export interface Props {
 
 export default function DropdownToggle(props: Props) {
   const styleWidth = {
-    width: props?.widthSub + "px",
+    width: props.widthSub ? props?.widthSub + "px" : "auto",
   };
   return (
     <>

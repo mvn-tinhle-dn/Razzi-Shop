@@ -153,9 +153,7 @@ const Header: React.FC<prop> = () => {
                   <li className="dropdown-sub-item flex">
                     <div className="menu-item-mega col-3">
                       <ul className="sub-mega">
-                        <a href="." className="mega-title">
-                          Shop Layout
-                        </a>
+                        <h3 className="mega-title">Shop Layout</h3>
                         <li className="mega-item">
                           <a href=".">Default</a>
                         </li>
@@ -173,51 +171,7 @@ const Header: React.FC<prop> = () => {
                         </li>
                       </ul>
                       <ul className="sub-mega">
-                        <a href="." className="mega-title">
-                          Product Layout
-                        </a>
-                        <li className="mega-item">
-                          <a href=".">Default</a>
-                        </li>
-                        <li className="mega-item">
-                          <a href=".">Topbar</a>
-                        </li>
-                        <li className="mega-item">
-                          <a href=".">Collapse</a>
-                        </li>
-                        <li className="mega-item">
-                          <a href=".">Model</a>
-                        </li>
-                        <li className="mega-item">
-                          <a href=".">Memory</a>
-                        </li>
-                      </ul>
-                    </div>
-                    <div className="menu-item-mega col-3">
-                      <ul className="sub-mega">
-                        <a href="." className="mega-title">
-                          Product Types
-                        </a>
-                        <li className="mega-item">
-                          <a href=".">Default</a>
-                        </li>
-                        <li className="mega-item">
-                          <a href=".">Topbar</a>
-                        </li>
-                        <li className="mega-item">
-                          <a href=".">Collapse</a>
-                        </li>
-                        <li className="mega-item">
-                          <a href=".">Model</a>
-                        </li>
-                        <li className="mega-item">
-                          <a href=".">Memory</a>
-                        </li>
-                      </ul>
-                      <ul className="sub-mega">
-                        <a href="." className="mega-title">
-                          Product Pages
-                        </a>
+                        <h3 className="mega-title">Product Layout</h3>
                         <li className="mega-item">
                           <a href=".">Default</a>
                         </li>
@@ -237,9 +191,7 @@ const Header: React.FC<prop> = () => {
                     </div>
                     <div className="menu-item-mega col-3">
                       <ul className="sub-mega">
-                        <a href="." className="mega-title">
-                          Product Cards
-                        </a>
+                        <h3 className="mega-title">Product Types</h3>
                         <li className="mega-item">
                           <a href=".">Default</a>
                         </li>
@@ -257,9 +209,7 @@ const Header: React.FC<prop> = () => {
                         </li>
                       </ul>
                       <ul className="sub-mega">
-                        <a href="." className="mega-title">
-                          Woo Pages
-                        </a>
+                        <h3 className="mega-title">Product Pages</h3>
                         <li className="mega-item">
                           <a href=".">Default</a>
                         </li>
@@ -279,9 +229,45 @@ const Header: React.FC<prop> = () => {
                     </div>
                     <div className="menu-item-mega col-3">
                       <ul className="sub-mega">
-                        <a href="." className="mega-title">
-                          Product Cards
-                        </a>
+                        <h3 className="mega-title">Product Cards</h3>
+                        <li className="mega-item">
+                          <a href=".">Default</a>
+                        </li>
+                        <li className="mega-item">
+                          <a href=".">Topbar</a>
+                        </li>
+                        <li className="mega-item">
+                          <a href=".">Collapse</a>
+                        </li>
+                        <li className="mega-item">
+                          <a href=".">Model</a>
+                        </li>
+                        <li className="mega-item">
+                          <a href=".">Memory</a>
+                        </li>
+                      </ul>
+                      <ul className="sub-mega">
+                        <h3 className="mega-title">Woo Pages</h3>
+                        <li className="mega-item">
+                          <a href=".">Default</a>
+                        </li>
+                        <li className="mega-item">
+                          <a href=".">Topbar</a>
+                        </li>
+                        <li className="mega-item">
+                          <a href=".">Collapse</a>
+                        </li>
+                        <li className="mega-item">
+                          <a href=".">Model</a>
+                        </li>
+                        <li className="mega-item">
+                          <a href=".">Memory</a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div className="menu-item-mega col-3">
+                      <ul className="sub-mega">
+                        <h3 className="mega-title">Product Cards</h3>
                         <li className="mega-item">
                           <a href=".">Default</a>
                         </li>
@@ -293,9 +279,7 @@ const Header: React.FC<prop> = () => {
                         </li>
                       </ul>
                       <ul className="sub-mega">
-                        <a href="." className="mega-title">
-                          Woo Pages
-                        </a>
+                        <h3 className="mega-title">Woo Pages</h3>
                         <li className="mega-item">
                           <a href=".">Default</a>
                         </li>
@@ -307,9 +291,7 @@ const Header: React.FC<prop> = () => {
                         </li>
                       </ul>
                       <ul className="sub-mega">
-                        <a href="." className="mega-title">
-                          Woo Pages
-                        </a>
+                        <h3 className="mega-title">Woo Pages</h3>
                         <li className="mega-item">
                           <a href=".">Default</a>
                         </li>
