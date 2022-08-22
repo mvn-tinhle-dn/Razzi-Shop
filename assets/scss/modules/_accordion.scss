@@ -82,7 +82,6 @@
     &::before {
       content: "";
       position: absolute;
-
       @include pxRem(left, -20);
       @include pxRem(top, 0);
       height: 1px;
@@ -121,8 +120,10 @@
     @include pxRem(padding, 0);
     height: 0;
     border: unset;
+    transition: height 0.3s linear;
     &.active {
-      animation: showSub 0.3s linear forwards;
+      height: 100%;
+      border-top: 1px solid map-get($colors, border-gray);
     }
     & > .filter-sub-list {
       @include pxRem(padding, 20);
@@ -136,14 +137,14 @@
       border-bottom: 1px solid map-get($colors, border-gray);
     }
   }
-}
-@keyframes showSub {
-  from {
-    height: 0px;
-    border-top: 1px solid transparent;
-  }
-  to {
-    height: 100%;
-    border-top: 1px solid map-get($colors, border-gray);
+  .filter-control {
+    @include pxRem(padding-left, 20);
+    @include pxRem(padding-right, 20);
+    & > .btn-clear {
+      width: 30%;
+    }
+    & > .btn-submit {
+      width: calc(70% - 10px);
+    }
   }
 }

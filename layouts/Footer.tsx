@@ -3,12 +3,15 @@ import Logo from "../modules/Logo";
 
 interface prop {}
 const Footer: React.FC<prop> = () => {
+  const toggleActive = (e: React.MouseEvent<HTMLLIElement, MouseEvent>) => {
+    (e.target as HTMLElement).classList.toggle("active");
+  };
   return (
     <footer className="footer">
       <div className="container">
         <div className="footer-top">
           <div className="row">
-            <div className="col-3 col-wide-4 col-small-12">
+            <div className="col-3 col-wide-4 col-medium-12 ">
               <div className="footer-logo">
                 <a href=".">
                   {" "}
@@ -76,62 +79,106 @@ const Footer: React.FC<prop> = () => {
                 </a>
               </div>
             </div>
-            <div className="col-9 col-wide-8 col-small-12">
+            <div className="col-9 col-wide-8 col-medium-12 ">
               <div className="flex justify-content-between flex-wrap">
                 <ul className="footer-menu">
-                  <li className="footer-menu-item footer-menu-head">SUPPORT</li>
-                  <li className="footer-menu-item">
-                    <a href=".">Contact Us</a>
+                  <li
+                    className=" footer-menu-head"
+                    onClick={(e) => {
+                      toggleActive(e);
+                    }}
+                  >
+                    SUPPORT
                   </li>
-                  <li className="footer-menu-item">
-                    <a href=".">FAQs</a>
-                  </li>
-                  <li className="footer-menu-item">
-                    <a href=".">Store Locator</a>
-                  </li>
-                  <li className="footer-menu-item">
-                    <a href=".">Shipping & Returns</a>
-                  </li>
-                </ul>
-                <ul className="footer-menu">
-                  <li className="footer-menu-item footer-menu-head">SHOP</li>
-                  <li className="footer-menu-item">
-                    <a href=".">Men’s Shopping</a>
-                  </li>
-                  <li className="footer-menu-item">
-                    <a href=".">Women’s Shopping</a>
-                  </li>
-                  <li className="footer-menu-item">
-                    <a href=".">Kids’ Shopping</a>
-                  </li>
-                  <li className="footer-menu-item">
-                    <a href=".">Discounts</a>
+                  <li className="footer-menu-content">
+                    <ul className="footer-menu-info">
+                      <li className="footer-menu-item">
+                        <a href=".">Contact Us</a>
+                      </li>
+                      <li className="footer-menu-item">
+                        <a href=".">FAQs</a>
+                      </li>
+                      <li className="footer-menu-item">
+                        <a href=".">Store Locator</a>
+                      </li>
+                      <li className="footer-menu-item">
+                        <a href=".">Shipping & Returns</a>
+                      </li>
+                    </ul>
                   </li>
                 </ul>
                 <ul className="footer-menu">
-                  <li className="footer-menu-item footer-menu-head">COMPANY</li>
-                  <li className="footer-menu-item">
-                    <a href=".">Our Story</a>
+                  <li
+                    className=" footer-menu-head"
+                    onClick={(e) => {
+                      toggleActive(e);
+                    }}
+                  >
+                    SHOP
                   </li>
-                  <li className="footer-menu-item">
-                    <a href=".">Careers</a>
-                  </li>
-                  <li className="footer-menu-item">
-                    <a href=".">Terms & Conditions</a>
-                  </li>
-                  <li className="footer-menu-item">
-                    <a href=".">Privacy & Cookie policy</a>
+                  <li className="footer-menu-content">
+                    <ul className="footer-menu-info">
+                      <li className="footer-menu-item">
+                        <a href=".">Men’s Shopping</a>
+                      </li>
+                      <li className="footer-menu-item">
+                        <a href=".">Women’s Shopping</a>
+                      </li>
+                      <li className="footer-menu-item">
+                        <a href=".">Kids’ Shopping</a>
+                      </li>
+                      <li className="footer-menu-item">
+                        <a href=".">Discounts</a>
+                      </li>
+                    </ul>
                   </li>
                 </ul>
                 <ul className="footer-menu">
-                  <li className="footer-menu-item footer-menu-head">CONTACT</li>
-                  <li className="footer-menu-item">
-                    <a href=".">1-888-923-8044</a>
-                    <br />
-                    <a href=".">1-888-923-8055</a>
-                    <br />
-                    <a href=".">help@allbirds.com</a>
-                    <br />
+                  <li
+                    className=" footer-menu-head"
+                    onClick={(e) => {
+                      toggleActive(e);
+                    }}
+                  >
+                    COMPANY
+                  </li>
+                  <li className="footer-menu-content">
+                    <ul className="footer-menu-info">
+                      <li className="footer-menu-item">
+                        <a href=".">Our Story</a>
+                      </li>
+                      <li className="footer-menu-item">
+                        <a href=".">Careers</a>
+                      </li>
+                      <li className="footer-menu-item">
+                        <a href=".">Terms & Conditions</a>
+                      </li>
+                      <li className="footer-menu-item">
+                        <a href=".">Privacy & Cookie policy</a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+                <ul className="footer-menu">
+                  <li
+                    className=" footer-menu-head"
+                    onClick={(e) => {
+                      toggleActive(e);
+                    }}
+                  >
+                    CONTACT
+                  </li>
+                  <li className="footer-menu-content">
+                    <ul className="footer-menu-info">
+                      <li className="footer-menu-item">
+                        <a href=".">1-888-923-8044</a>
+                        <br />
+                        <a href=".">1-888-923-8055</a>
+                        <br />
+                        <a href=".">help@allbirds.com</a>
+                        <br />
+                      </li>
+                    </ul>
                   </li>
                 </ul>
               </div>
@@ -142,12 +189,12 @@ const Footer: React.FC<prop> = () => {
       <div className="footer-bottom">
         <div className="container">
           <div className="row">
-            <div className="footer-bottom-left footer-bottom-item col-6 col-small-12 ">
+            <div className="footer-bottom-left footer-bottom-item col-6 col-medium-12 ">
               <p>© 2021 All rights reserved.</p>
             </div>
-            <div className="footer-bottom-right footer-bottom-item col-6 col-small-12 ">
+            <div className="footer-bottom-right footer-bottom-item col-6 col-medium-12 ">
               <ul className="footer-bottom-payments flex">
-                <li className="payments-item  ">
+                <li className="payments-item">
                   <img
                     src="https://i0.wp.com/demo4.drfuri.com/razzi3/wp-content/uploads/sites/17/2021/06/icons_payment.png?w=283&ssl=1"
                     alt="payments"

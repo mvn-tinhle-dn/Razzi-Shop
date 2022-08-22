@@ -9,7 +9,7 @@
     @include pxRem(padding-left, 2.5);
     @include pxRem(margin-bottom, 19);
 
-    &-head.footer-menu-item {
+    &-head {
       @include pxRem(font-size, 13);
       @include pxRem(margin-bottom, 16);
       @include pxRem(padding, 0);
@@ -21,14 +21,37 @@
     &-item {
       @include pxRem(padding, 4 0);
       & > a {
+        position: relative;
         color: map-get($colors, txt-gray);
         @include pxRem(font-size, 16);
         line-height: 1.5;
         font-weight: 400;
         letter-spacing: 0.0005em;
+        transition: color 0.3s linear;
+      }
+      & > a::after {
+        content: "";
+        position: absolute;
+        bottom: -1px;
+        left: 0rem;
+        width: 0;
+        height: 0.0625rem;
+        transition: width 0.3s linear;
+        background-color: currentColor;
+      }
+      &:not(.footer-menu-item:last-child):hover {
+        & > a {
+          color: map-get($colors, white);
+        }
+        & > a::after {
+          width: 100%;
+        }
       }
       &:nth-child(2) {
         @include pxRem(padding-top, 0);
+      }
+      &:last-child:hover > a {
+        cursor: text;
       }
     }
   }
@@ -40,9 +63,19 @@
         @include pxRem(margin-top, 1);
       }
     }
+    .footer-menu-item > a:nth-child(3) {
+      margin-top: 0;
+    }
+    .footer-menu-item > a:nth-child(5) {
+      margin-top: -1px;
+    }
+  }
+  .footer-menu-info > li:first-child {
+    @include pxRem(padding-top, 0);
+    @include pxRem(padding-bottom, 8px);
   }
   .footer-socials {
-    @include pxRem(margin-top, 26);
+    @include pxRem(margin-top, 25);
     @include pxRem(margin-left, -7);
 
     & > a {
@@ -73,7 +106,6 @@
     width: 100%;
     @include pxRem(top, 0);
   }
-  // border-top: 1px solid ;
   &-item {
     @include pxRem(padding, 22 0 22 0);
   }
@@ -89,6 +121,7 @@
     justify-content: flex-end;
   }
 }
+//Respond 960
 @include respond-below(wide) {
   .footer {
     background-size: cover;
@@ -102,5 +135,83 @@
   .footer-menu:nth-child(2),
   .footer-menu:nth-child(4) {
     @include pxRem(padding-left, 16.5);
+  }
+}
+//Respond 768
+@include respond-below(medium) {
+  .footer-top .col-3.col-wide-4.col-medium-12 {
+    @include pxRem(margin-bottom, 20);
+  }
+  .footer-top .col-9.col-wide-8.col-medium-12 {
+    .footer-menu {
+      @include pxRem(padding-left, 0);
+      width: 100%;
+    }
+  }
+  .footer-bottom {
+    &-left > p {
+      text-align: center;
+    }
+  }
+  .footer-bottom-payments {
+    justify-content: center;
+  }
+  .footer-bottom-left.footer-bottom-item,
+  .footer-bottom-right.footer-bottom-item {
+    @include pxRem(padding, 5 0);
+  }
+  .footer-bottom-left > p {
+    line-height: 21px;
+  }
+  .footer-bottom-payments {
+    height: 30px;
+  }
+  .footer-bottom {
+    @include pxRem(padding, 22 0 22 0);
+  }
+  .footer-top .footer-menu {
+    margin-bottom: 0;
+  }
+  .footer-menu-content {
+    height: 0px;
+    overflow: hidden;
+    transition: height 0.3s linear;
+  }
+  .footer-top .footer-menu-head {
+    position: relative;
+    margin-bottom: 0;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #444;
+    transition: border 0.3s linear;
+    &::after {
+      content: "";
+      position: absolute;
+      display: inline-block;
+      width: #{f-pxRem(11)};
+      height: #{f-pxRem(6)};
+      right: 20px;
+      background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTEiIGhlaWdodD0iNiIgdmlld0JveD0iMCAwIDExIDYiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+DQo8cGF0aCBkPSJNNC45NTU0NCA1Ljc4NDEzTDAuMjI1NzY1IDEuMjU4MjdDLTAuMDc1MjU1NCAwLjk3MDM3NSAtMC4wNzUyNTU0IDAuNTAzNTk2IDAuMjI1NzY1IDAuMjE1ODM3QzAuNTI2NTE3IC0wLjA3MTk0NTYgMS4wMTQzMSAtMC4wNzE5NDU2IDEuMzE1MDQgMC4yMTU4MzdMNS41MDAwOCA0LjIyMDUyTDkuNjg0OTggMC4yMTU5NTNDOS45ODU4NSAtMC4wNzE4MjkyIDEwLjQ3MzYgLTAuMDcxODI5MiAxMC43NzQzIDAuMjE1OTUzQzExLjA3NTIgMC41MDM3MzYgMTEuMDc1MiAwLjk3MDQ5MSAxMC43NzQzIDEuMjU4MzlMNi4wNDQ1OSA1Ljc4NDI0QzUuODk0MTQgNS45MjgxNCA1LjY5NzE3IDYgNS41MDAxIDZDNS4zMDI5NCA2IDUuMTA1ODIgNS45MjggNC45NTU0NCA1Ljc4NDEzWiIgZmlsbD0iIzFGMUYxRiIvPg0KPC9zdmc+DQo=);
+      background-size: 100%;
+      filter: brightness(0) invert(1);
+      transition: transform 0.4s ease-in-out;
+    }
+    &.active {
+      &::after {
+        transform: rotate(180deg);
+      }
+    }
+  }
+  .footer-menu:not(.footer-menu:first-child) {
+    padding-top: 16px;
+  }
+  .footer-menu-head.active {
+    border-bottom: 1px solid transparent;
+  }
+  .footer-menu-head.active + .footer-menu-content {
+    height: 100%;
+    .footer-menu-info {
+      border-bottom: 1px solid #444;
+      padding-bottom: 17px;
+    }
   }
 }

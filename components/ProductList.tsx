@@ -36,7 +36,7 @@ export default function ProductList() {
           return (
             <div
               key={item.id}
-              className="product-item col-small-6 col-medium-6  col-wide-4   col-3 "
+              className="product-item col-3 col-medium-4 col-small-6 "
             >
               <ProductItem item={item} />
             </div>

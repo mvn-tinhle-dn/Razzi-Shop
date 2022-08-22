@@ -33,7 +33,7 @@
       }
     }
     .slick-arrow.slick-prev {
-      @include pxRem(left, -2);
+      @include pxRem(left, -3);
       &::before {
         font-family: "Font Awesome 5 Free";
         font-weight: 600;
@@ -46,10 +46,10 @@
     }
     .slick-arrow.slick-next,
     .slick-arrow.slick-prev {
-      top: calc(50% - 20px);
+      top: calc(50% - 17px);
     }
     .slick-arrow.slick-next {
-      @include pxRem(right, -2);
+      @include pxRem(right, -3);
       &::before {
         font-family: "Font Awesome 5 Free";
         font-weight: 600;
@@ -65,13 +65,13 @@
         text-align: center;
       }
       & h3 > img {
-        margin-bottom: #{f-pxRem(18)};
+        margin-bottom: #{f-pxRem(17)};
       }
       .slick-title {
         font-size: #{f-pxRem(18)};
         font-weight: 500;
         text-align: center;
-        letter-spacing: 0.005em;
+        letter-spacing: 0.001em;
         cursor: pointer;
       }
     }
