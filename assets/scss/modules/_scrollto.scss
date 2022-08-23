@@ -1,0 +1,18 @@
+.scroll-top {
+  position: fixed;
+  display: flex;
+  z-index: 1;
+  width: #{f-pxRem(36)};
+  height: #{f-pxRem(36)};
+  right: #{f-pxRem(10)};
+  bottom: #{f-pxRem(25)};
+  background-color: map-get($colors, black);
+  color: map-get($colors, white);
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+  .scroll-icon {
+    transform: rotate(-90deg);
+  }
+}

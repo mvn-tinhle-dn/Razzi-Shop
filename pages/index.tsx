@@ -15,6 +15,7 @@ import RatingFilter from "../components/Filter/RatingFilter";
 import BrandFilter from "../components/Filter/BrandFilter";
 import ProductItem from "../components/ProductItem";
 import ProductList from "../components/ProductList";
+import ScrollTo from "../components/scrollTo";
 
 const Home: NextPage = () => {
   const home = useRef<HTMLHeadingElement>(null);
@@ -113,6 +114,7 @@ const Home: NextPage = () => {
             <h4 className="title-sub-text">Showing 16 of 16 products</h4>
           </div>
         </div>
+        <ScrollTo />
       </div>
     </>
   );

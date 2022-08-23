@@ -161,27 +161,27 @@
     @include pxRem(padding, 5 0);
   }
   .footer-bottom-left > p {
-    line-height: 21px;
+    line-height: #{f-pxRem(21)};
   }
   .footer-bottom-payments {
-    height: 30px;
+    height: #{f-pxRem(30)};
   }
   .footer-bottom {
     @include pxRem(padding, 22 0 22 0);
   }
   .footer-top .footer-menu {
-    margin-bottom: 0;
+    @include pxRem(margin-bottom, 0);
   }
   .footer-menu-content {
-    height: 0px;
+    height: 0;
     overflow: hidden;
     transition: height 0.3s linear;
   }
   .footer-top .footer-menu-head {
     position: relative;
-    margin-bottom: 0;
-    padding-bottom: 16px;
-    border-bottom: 1px solid #444;
+    @include pxRem(margin-bottom, 0);
+    @include pxRem(padding-bottom, 16);
+    border-bottom: #{f-pxRem(1)} solid #444;
     transition: border 0.3s linear;
     &::after {
       content: "";
@@ -189,7 +189,7 @@
       display: inline-block;
       width: #{f-pxRem(11)};
       height: #{f-pxRem(6)};
-      right: 20px;
+      @include pxRem(right, 20);
       background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTEiIGhlaWdodD0iNiIgdmlld0JveD0iMCAwIDExIDYiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+DQo8cGF0aCBkPSJNNC45NTU0NCA1Ljc4NDEzTDAuMjI1NzY1IDEuMjU4MjdDLTAuMDc1MjU1NCAwLjk3MDM3NSAtMC4wNzUyNTU0IDAuNTAzNTk2IDAuMjI1NzY1IDAuMjE1ODM3QzAuNTI2NTE3IC0wLjA3MTk0NTYgMS4wMTQzMSAtMC4wNzE5NDU2IDEuMzE1MDQgMC4yMTU4MzdMNS41MDAwOCA0LjIyMDUyTDkuNjg0OTggMC4yMTU5NTNDOS45ODU4NSAtMC4wNzE4MjkyIDEwLjQ3MzYgLTAuMDcxODI5MiAxMC43NzQzIDAuMjE1OTUzQzExLjA3NTIgMC41MDM3MzYgMTEuMDc1MiAwLjk3MDQ5MSAxMC43NzQzIDEuMjU4MzlMNi4wNDQ1OSA1Ljc4NDI0QzUuODk0MTQgNS45MjgxNCA1LjY5NzE3IDYgNS41MDAxIDZDNS4zMDI5NCA2IDUuMTA1ODIgNS45MjggNC45NTU0NCA1Ljc4NDEzWiIgZmlsbD0iIzFGMUYxRiIvPg0KPC9zdmc+DQo=);
       background-size: 100%;
       filter: brightness(0) invert(1);
@@ -202,16 +202,16 @@
     }
   }
   .footer-menu:not(.footer-menu:first-child) {
-    padding-top: 16px;
+    @include pxRem(padding-top, 16);
   }
   .footer-menu-head.active {
-    border-bottom: 1px solid transparent;
+    border-bottom: #{f-pxRem(1)} solid transparent;
   }
   .footer-menu-head.active + .footer-menu-content {
     height: 100%;
     .footer-menu-info {
       border-bottom: 1px solid #444;
-      padding-bottom: 17px;
+      @include pxRem(padding-bottom, 17);
     }
   }
 }
