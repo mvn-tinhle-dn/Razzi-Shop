@@ -35,10 +35,10 @@
     .slick-arrow.slick-prev {
       @include pxRem(left, -3);
       &::before {
-        font-family: "Font Awesome 5 Free";
+        content: "\f104";
+        font-family: "Font Awesome 5 Pro", "Font Awesome 5 Free";
         font-weight: 600;
         font-size: #{f-pxRem(28)};
-        content: "\f104";
         color: #d0d0d0;
         opacity: 1;
         transition: opacity 0.3s linear;
@@ -51,11 +51,11 @@
     .slick-arrow.slick-next {
       @include pxRem(right, -3);
       &::before {
-        font-family: "Font Awesome 5 Free";
+        content: "\f105";
+        font-family: "Font Awesome 5 Pro", "Font Awesome 5 Free";
         font-weight: 600;
         font-size: #{f-pxRem(28)};
         opacity: 1;
-        content: "\f105";
         color: #d0d0d0;
         transition: color 0.3s linear;
       }
