@@ -4,15 +4,21 @@
   z-index: 1;
   width: #{f-pxRem(36)};
   height: #{f-pxRem(36)};
-  right: #{f-pxRem(10)};
+  right: #{f-pxRem(-36)};
   bottom: #{f-pxRem(25)};
   background-color: map-get($colors, black);
   color: map-get($colors, white);
   align-items: center;
   justify-content: center;
   border-radius: 50%;
+  opacity: 0;
+  transition: all 0.3s ease-out;
   cursor: pointer;
   .scroll-icon {
     transform: rotate(-90deg);
+  }
+  &.show {
+    opacity: 1;
+    right: #{f-pxRem(20)};
   }
 }

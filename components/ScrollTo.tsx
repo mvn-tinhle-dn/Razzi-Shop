@@ -12,8 +12,7 @@ export default function ScrollTo(props: IScrollToProps) {
   });
   const handleScrollTop = () => {
     window.scrollTo({
-      top: window.scrollY,
-      left: 0,
+      top: 0,
       behavior: "smooth",
     });
     setHideScroll(false);
@@ -21,7 +20,7 @@ export default function ScrollTo(props: IScrollToProps) {
 
   return (
     <div
-      className={`scroll-top ${hideScroll ? "is-hidden" : ""}`}
+      className={`scroll-top ${hideScroll ? "" : "show"}`}
       onClick={() => handleScrollTop()}
     >
       <span className="scroll-icon">
