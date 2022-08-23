@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import DropdownToggle from "../components/DropdownToggle";
 import OffCanvas from "../components/OffCanvas";
+import Badges from "../modules/Badges";
 import Logo from "../modules/Logo";
 import MenuIcon from "../modules/MenuIcon";
 
@@ -155,7 +156,10 @@ const Header: React.FC<prop> = () => {
                       <ul className="sub-mega">
                         <li className="mega-title">Shop Layout</li>
                         <li className="mega-item">
-                          <a href=".">Default</a>
+                          <a href=".">
+                            Default
+                            <Badges badges="New" />
+                          </a>
                         </li>
                         <li className="mega-item">
                           <a href=".">Topbar</a>
@@ -205,7 +209,9 @@ const Header: React.FC<prop> = () => {
                           <a href=".">Model</a>
                         </li>
                         <li className="mega-item">
-                          <a href=".">Memory</a>
+                          <a href=".">
+                            Memory <Badges badges="New" />
+                          </a>
                         </li>
                       </ul>
                       <ul className="sub-mega">

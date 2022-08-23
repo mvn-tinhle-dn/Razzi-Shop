@@ -62,6 +62,7 @@
         cursor: pointer;
       }
       .mega-item > a {
+        position: relative;
         color: map-get($colors, black);
         transition: color 0.2s linear;
       }
