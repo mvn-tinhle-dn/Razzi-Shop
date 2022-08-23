@@ -15,7 +15,7 @@ import RatingFilter from "../components/Filter/RatingFilter";
 import BrandFilter from "../components/Filter/BrandFilter";
 import ProductItem from "../components/ProductItem";
 import ProductList from "../components/ProductList";
-import ScrollTo from "../components/scrollTo";
+import ScrollTo from "../components/ScrollTo";
 
 const Home: NextPage = () => {
   const home = useRef<HTMLHeadingElement>(null);
