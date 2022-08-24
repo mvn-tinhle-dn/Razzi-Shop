@@ -53,28 +53,33 @@ $container-width: 1190px;
  * Ex: col-1, col-2 */
 @include build-grid("");
 
-/* Grid for screen min-width: $largest
+/* Grid for screen max-width: $largest
 * Ex: col-largest-1, col-largest-2 */
 @include respond-below(largest) {
   @include build-grid(largest);
 }
-/* Grid for screen min-width: $large
+/* Grid for screen max-width: $large
 * Ex: col-large-1, col-large-2 */
 @include respond-below(large) {
   @include build-grid(large);
 }
-/* Grid for screen min-width: $wide
+/* Grid for screen max-width: $wide
 * Ex: col-wide-1, col-wide-2 */
 @include respond-below(wide) {
   @include build-grid(wide);
 }
-/* Grid for screen min-width: $medium
+/* Grid for screen max-width: $medium
  * Ex: col-medium-1, col-medium-2 */
 @include respond-below(medium) {
   @include build-grid(medium);
 }
-/* Grid for screen min-width: $small
+/* Grid for screen max-width: $small
 * Ex: col-small-1, col-small-2 */
 @include respond-below(small) {
   @include build-grid(small);
+}
+/* Grid for screen max-width: $mini
+* Ex: col-mini-1, col-mini-2 */
+@include respond-below(mini) {
+  @include build-grid(mini);
 }

@@ -64,10 +64,10 @@
       }
     }
     .footer-menu-item > a:nth-child(3) {
-      margin-top: 0;
+      margin-top: 1px;
     }
     .footer-menu-item > a:nth-child(5) {
-      margin-top: -1px;
+      margin-top: 0;
     }
   }
   .footer-menu-info > li:first-child {
@@ -75,7 +75,7 @@
     @include pxRem(padding-bottom, 8px);
   }
   .footer-socials {
-    @include pxRem(margin-top, 25);
+    @include pxRem(margin-top, 26);
     @include pxRem(margin-left, -7);
 
     & > a {

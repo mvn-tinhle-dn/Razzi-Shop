@@ -4,41 +4,37 @@ import { Menu } from "antd";
 import { CheckboxChangeEvent } from "antd/lib/checkbox";
 export interface IRoomFilterProps {}
 
-const onChange = (e: CheckboxChangeEvent) => {
-  console.log(`checked = ${e.target.checked}`);
-};
-
 export default function RoomFilter(props: IRoomFilterProps) {
   return (
     <ul className="filter-sub-list">
       <li className="filter-sub-item">
         <span className="filter-option">
-          <Checkbox onChange={(e) => onChange(e)}>Bath</Checkbox>
+          <Checkbox>Bath</Checkbox>
         </span>
       </li>
       <li className="filter-sub-item">
         <span className="filter-option">
-          <Checkbox onChange={(e) => onChange(e)}>Bed</Checkbox>
+          <Checkbox>Bed</Checkbox>
         </span>
       </li>
       <li className="filter-sub-item">
         <span className="filter-option">
-          <Checkbox onChange={(e) => onChange(e)}>DinMing</Checkbox>
+          <Checkbox>DinMing</Checkbox>
         </span>
       </li>
       <li className="filter-sub-item">
         <span className="filter-option">
-          <Checkbox onChange={(e) => onChange(e)}>Kitchen</Checkbox>
+          <Checkbox>Kitchen</Checkbox>
         </span>
       </li>
       <li className="filter-sub-item">
         <span className="filter-option">
-          <Checkbox onChange={(e) => onChange(e)}>Office</Checkbox>
+          <Checkbox>Office</Checkbox>
         </span>
       </li>
       <li className="filter-sub-item">
         <span className="filter-option">
-          <Checkbox onChange={(e) => onChange(e)}>OutDoor</Checkbox>
+          <Checkbox>OutDoor</Checkbox>
         </span>
       </li>
     </ul>
