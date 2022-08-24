@@ -50,7 +50,7 @@ export default function Carousel(props: ICarouselProps) {
               <h3>
                 <img
                   src={item.image}
-                  alt={`image${index}`}
+                  alt={`razzi shop ${index}`}
                   className="lazyloaded"
                 />
                 <span className="slick-title">{item.title}</span>
