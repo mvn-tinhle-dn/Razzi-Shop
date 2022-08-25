@@ -66,6 +66,12 @@
   }
   .product-actions-heart {
     animation: unHoverAction 0.2s linear;
+    &.active {
+      background-color: map-get($colors, txt-hover);
+      svg {
+        color: map-get($colors, white);
+      }
+    }
   }
   .product-actions-view {
     animation: unHoverAction 0.2s linear 0.1s;

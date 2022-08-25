@@ -2,7 +2,8 @@ import * as React from "react";
 import Bag from "../modules/Bag";
 import Heart from "../modules/Heart";
 import View from "../modules/View";
-
+import { useDispatch } from "react-redux";
+import { decrementHeart, incrementHeart } from "../store/useSlice";
 interface props {
   item: {
     images: ["", ""];
@@ -16,6 +17,8 @@ interface props {
 const ProductItem: React.FC<props> = ({ item }) => {
   const div1 = React.useRef<HTMLDivElement>(null);
   const imgEl = React.useRef<HTMLImageElement>(null);
+  const dispatch = useDispatch();
+  //Hover convert image
   React.useEffect(() => {
     div1.current?.addEventListener("mouseenter", () => {
       (imgEl.current as HTMLImageElement).src = item.images[1];
@@ -24,13 +27,26 @@ const ProductItem: React.FC<props> = ({ item }) => {
       (imgEl.current as HTMLImageElement).src = item.images[0];
     });
   });
+  //add heart product
+  const addHeart = (e: React.MouseEvent<HTMLSpanElement, MouseEvent>) => {
+    (e.target as HTMLElement).classList.toggle("active");
+    if ((e.target as HTMLElement).className.includes("active")) {
+      dispatch(incrementHeart());
+    } else {
+      dispatch(decrementHeart());
+    }
+  };
+
   return (
     <>
       <div ref={div1} className="product-item">
         <div className="product-img">
           <img ref={imgEl} src={item.images[0]} alt="" />
           <span className="product-actions">
-            <span className="product-actions-item product-actions-heart">
+            <span
+              onClick={(e) => addHeart(e)}
+              className="product-actions-item product-actions-heart"
+            >
               <Heart />
               <span className="actions-tooltip">Wishlist</span>
             </span>

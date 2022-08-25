@@ -6,7 +6,6 @@ select,
 textarea {
   @include pxRem("padding", 8);
   @include pxRem("height", 40);
-  @include pxRem(border-radius, 8);
   width: 100%;
   border: 1px solid map-get($colors, border-gray);
   color: map-get($colors, txt-primary);
@@ -18,7 +17,7 @@ textarea {
   transition: border-color 0.4s, box-shadow 0.4s;
   &:focus {
     border-color: map-get($colors, action-blue);
-    box-shadow: 0 0 0 1px map-get($colors, border-gray);
+    box-shadow: 0 0 0 1px map-get($colors, black);
   }
   &:disabled,
   &.disabled {

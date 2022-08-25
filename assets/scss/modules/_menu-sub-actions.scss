@@ -1,0 +1,37 @@
+//Search
+.search-sub {
+  @include pxRem(padding, 6);
+  & > .search-sub-item {
+    position: relative;
+    @include pxRem(margin-bottom, 20);
+    & > span {
+      position: absolute;
+      top: 50%;
+      @include pxRem(right, 22px);
+      transform: translateY(-50%);
+    }
+  }
+  & .product-search-select,
+  .search-sub-input {
+    border-radius: unset;
+    @include pxRem(padding, 12 40 12 25);
+    @include pxRem(font-size, 16);
+    line-height: 1.5;
+    height: #{f-pxRem(54)};
+    cursor: pointer;
+    border: 1px solid map-get($colors, border-gray);
+    outline: none;
+    &:focus {
+      border: 1px solid map-get($colors, black);
+      box-shadow: unset;
+    }
+  }
+}
+.ant-drawer-header-title > .ant-drawer-title {
+  @include pxRem(font-size, 18);
+  line-height: 1;
+  letter-spacing: 0.0005em;
+}
+.ant-drawer-wrapper-body > .ant-drawer-header {
+  @include pxRem(padding, 25 45 20 20);
+}

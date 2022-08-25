@@ -58,4 +58,9 @@
       width: 100% !important;
     }
   }
+  .ant-drawer.ant-drawer-right {
+    .ant-drawer-wrapper-body > .ant-drawer-body {
+      padding-left: 24px;
+    }
+  }
 }

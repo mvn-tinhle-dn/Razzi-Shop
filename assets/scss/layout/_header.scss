@@ -84,6 +84,9 @@
     & > li:nth-child(2) {
       @include pxRem(padding-bottom, 3);
     }
+    & > li > a {
+      position: relative;
+    }
   }
 }
 

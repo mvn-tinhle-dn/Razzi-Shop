@@ -4,7 +4,7 @@
   text-align: center;
   .ant-drawer-close {
     position: absolute;
-    right: 0;
+    @include pxRem(right, -20);
     top: 50%;
     transform: translateY(-50%);
   }

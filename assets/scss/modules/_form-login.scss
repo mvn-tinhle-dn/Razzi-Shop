@@ -1,0 +1,85 @@
+.form-sign-in {
+  @include pxRem(padding, 6 26);
+  & > label {
+    @include pxRem(margin-bottom, 20);
+    position: relative;
+    & > span {
+      position: absolute;
+      width: #{f-pxRem(20)};
+      height: #{f-pxRem(20)};
+      top: 50%;
+      right: #{f-pxRem(12)};
+      transform: translateY(-50%);
+      background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiMxMTExMTEiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0iZmVhdGhlciBmZWF0aGVyLWV5ZSI+PHBhdGggZD0iTTEgMTJzNC04IDExLTggMTEgOCAxMSA4LTQgOC0xMSA4LTExLTgtMTEtOHoiPjwvcGF0aD48Y2lyY2xlIGN4PSIxMiIgY3k9IjEyIiByPSIzIj48L2NpcmNsZT48L3N2Zz4=");
+      background-size: 100%;
+      cursor: pointer;
+    }
+  }
+  & > label > input {
+    height: #{f-pxRem(50)};
+    @include pxRem(font-size, 16);
+    @include pxRem(padding, 12 15);
+    border: #{f-pxRem(1)} solid #ccc;
+  }
+  .form-sub {
+    line-height: #{f-pxRem(20)};
+    @include pxRem(margin-bottom, 25);
+    & > label,
+    & > a {
+      font-weight: 400;
+      @include pxRem(font-size, 15);
+    }
+    & .check-round {
+      margin-bottom: unset;
+    }
+    & .check-round > .checkmark.gray {
+      background-color: #e2e2e2;
+      width: #{f-pxRem(20)};
+      height: #{f-pxRem(20)};
+      border-radius: unset;
+      &::after {
+        @include pxRem(top, 2);
+        @include pxRem(left, 6);
+      }
+    }
+    & > a {
+      line-height: #{f-pxRem(20)};
+    }
+  }
+  .form-action {
+    & > .btn {
+      width: 100%;
+      line-height: #{f-pxRem(50)};
+      height: #{f-pxRem(50)};
+      @include pxRem(margin-bottom, 20);
+      border: #{f-pxRem(1)} solid map-get($colors, black);
+    }
+    & > .btn-login-submit {
+      background-color: map-get($colors, black);
+      color: map-get($colors, white);
+    }
+  }
+  .form-action-sub {
+    @include pxRem(margin-top, 20);
+    & > .btn {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      height: #{f-pxRem(40)};
+      line-height: #{f-pxRem(40)};
+      border-radius: #{f-pxRem(4)};
+      color: map-get($colors, white);
+      width: 100%;
+      @include pxRem(margin-bottom, 20);
+      & > span {
+        display: flex;
+      }
+    }
+    & > .btn-login-face {
+      background-color: #1877f2;
+    }
+    & > .btn-login-google {
+      background-color: #dc4e41;
+    }
+  }
+}
