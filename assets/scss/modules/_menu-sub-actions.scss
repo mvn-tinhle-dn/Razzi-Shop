@@ -19,10 +19,10 @@
     line-height: 1.5;
     height: #{f-pxRem(54)};
     cursor: pointer;
-    border: 1px solid map-get($colors, border-gray);
+    border: #{f-pxRem(1)} solid map-get($colors, border-gray);
     outline: none;
     &:focus {
-      border: 1px solid map-get($colors, black);
+      border: #{f-pxRem(1)} solid map-get($colors, black);
       box-shadow: unset;
     }
   }
